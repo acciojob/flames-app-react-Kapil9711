@@ -11,16 +11,18 @@ const messageArr = [
 ];
 
 const removeMatchedChar = (str1, str2) => {
+  let newStr1 = str1;
+  let newStr2 = str2;
   for (let i = 0; i < str1.length; i++) {
-    let ch1 = str1[i];
-    let ch2 = str2[i];
+    const ch1 = str1[i];
+    const ch2 = str2[i];
     if (ch1 === undefined || ch2 === undefined) break;
-    if (str1.includes(ch1) || str2.includes(ch2)) {
-      str1 = str1.replace(ch1, "");
-      str2 = str2.replace(ch1, "");
+    if (newStr1.includes(ch1) && newStr2.includes(ch1)) {
+      newStr1 = newStr1.replace(ch1, "");
+      newStr2 = newStr2.replace(ch1, "");
     }
   }
-  return [str1, str2];
+  return [newStr1, newStr2];
 };
 
 function App() {
@@ -34,6 +36,7 @@ function App() {
     if (userName1 === "" || userName2 === "")
       return setMessage("Please Enter valid input");
     let [str1, str2] = removeMatchedChar(userName1, userName2);
+    console.log(str1, str2);
     const msgNumber = (str1.length + str2.length) % 6;
     setMessage(messageArr[msgNumber]); // getting msg based on number
   };
