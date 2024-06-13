@@ -35,7 +35,7 @@ function App() {
       return setMessage("Please Enter valid input");
     let [str1, str2] = removeMatchedChar(userName1, userName2);
     const msgNumber = (str1.length + str2.length) % 6;
-    setMessage(messageArr[msgNumber]);
+    setMessage(messageArr[msgNumber]); // getting msg based on number
   };
 
   const handleClear = () => {
@@ -46,8 +46,8 @@ function App() {
 
   return (
     <div id="main">
-      <input data-testid="input1" ref={input1Ref} type="text" />
-      <input data-testid="input2" ref={input2Ref} type="text" name="" id="" />
+      <input name="name1" data-testid="input1" ref={input1Ref} type="text" />
+      <input name="name2" data-testid="input2" ref={input2Ref} type="text" />
       <button data-testid="calculate_relationship" onClick={handleCalculate}>
         Calculate Relationship Future
       </button>
