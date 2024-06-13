@@ -31,12 +31,11 @@ function App() {
   const [message, setMessage] = React.useState("");
 
   const handleCalculate = () => {
-    let userName1 = input1Ref.current.value;
-    let userName2 = input2Ref.current.value;
-    if (userName1 === "" || userName2 === "")
+    let inputName1 = input1Ref.current.value;
+    let inputName2 = input2Ref.current.value;
+    if (inputName1 === "" || inputName2 === "")
       return setMessage("Please Enter valid input");
-    let [str1, str2] = removeMatchedChar(userName1, userName2);
-    console.log(str1, str2);
+    let [str1, str2] = removeMatchedChar(inputName1, inputName2);
     const msgNumber = (str1.length + str2.length) % 6;
     setMessage(messageArr[msgNumber]); // getting msg based on number
   };
