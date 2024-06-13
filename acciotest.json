@@ -1,4 +1,5 @@
 {
     "testRepo": "flames-app-solution",
-    "pathToFile": "cypress/integration/tests/test.spec.js"
+    "pathToFile": "cypress/integration/tests/test.spec.js",
+    "screenshotsFolder": "cypress/screenshots"
 }
